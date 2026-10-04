@@ -39,3 +39,10 @@ and `remove(element, 0)` are no-ops rather than errors; they let callers skip
 their own guards when counts are computed dynamically. `n` must be a plain
 `int` — `bool` is rejected even though it subclasses `int`, because a
 `True` count of 1 is almost always a caller mistake.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
