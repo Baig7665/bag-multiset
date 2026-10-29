@@ -1,6 +1,6 @@
 [project]
 name = "bag-multiset"
-version = "0.1.5"
+version = "0.1.6"
 description = "Tracks element multiplicities with insert, remove, and count operations."
 requires-python = ">=3.10"
 dependencies = []
